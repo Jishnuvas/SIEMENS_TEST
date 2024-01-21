@@ -1,0 +1,60 @@
+$bg-submit:rgb(10, 10, 237);
+$bg-delete:rgb(199, 1, 1);
+$bg-add:rgb(15, 174, 0);
+form{
+    padding: 2rem;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+}
+.addresses{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.address{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 50%;
+    border: 2px dotted grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    .delete-address{
+        margin-top: 1rem;
+        background-color: $bg-delete;
+        width: 10rem;
+        color: white;
+    }
+}
+.form-control{
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+.add-submit-group{
+    margin-top: 1rem;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    .add-address{
+        background-color: $bg-add;
+        width: 10rem;
+        color: white;
+    }
+    .submit-form{
+        background-color: $bg-submit;
+        width: 10rem;
+        color: white;
+    }
+}
+
+input{
+    width: 25%;
+    height: 1.5rem;
+}
+.required-validation{
+    color: red;
+}

@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="logo-button-group">
+      <h1 class="logo">SIEMENS</h1>
+      <ng-container *ngFor="let button of buttons |async;let i=index">
+          <button [ngClass]="button.isSelected?'select':'unselect'" mat-raised-button  class="button-element" (click)="selectRoute(button)">{{button.name}}</button>
+      </ng-container>
+  </div>
+
+  <div style="height: 100%;width: 100px;background-color: blueviolet;">
+    <mat-icon>home</mat-icon>
+  </div>
+</header>
+<router-outlet></router-outlet>

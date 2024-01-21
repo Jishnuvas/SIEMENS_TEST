@@ -1,0 +1,31 @@
+$bg-norml:rgb(214, 214, 214);
+$bg-selected:blue;
+$color-selected:white;
+
+
+.header{
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    border: 1px solid black;
+}
+.logo-button-group{
+    display: flex;
+    align-items: center;
+    .logo{
+        margin-right: 5px;
+    }
+    .button-element{
+        border: none;
+        border-radius: 0;
+    }
+    .select{
+        background-color: $bg-selected;
+        color: $color-selected;
+    }
+    .un-select{
+        background-color: $bg-norml;
+    }
+
+}

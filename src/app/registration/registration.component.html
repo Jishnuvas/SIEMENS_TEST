@@ -1,0 +1,35 @@
+<h1>Sign In</h1>
+<form [formGroup]="registrationForm">
+    <div class="user-details">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" >
+        <div *ngIf="username?.errors?.required && username?.touched" class="-validation">
+            Username is required
+        </div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" >
+        <div *ngIf="email?.errors?.required && email?.touched" class="-validation">
+            Email is required
+        </div>
+    </div>
+
+  
+    <div formArrayName="addresses" class="addresses">
+      <div class="address" *ngFor="let addressGroup of addressForms?.controls; let i = index" [formGroupName]="i">
+            <label for="city">City:</label>
+            <input type="text" id="city" formControlName="city" >
+            <label for="state">State:</label>
+            <input type="text" id="state" formControlName="state" >
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" formControlName="pincode" >
+        <button  mat-raised-button class="delete-address" type="button" (click)="deleteAddress(i)">Delete Address</button>
+      </div>
+    </div>
+
+    <div class="add-submit-group">
+        <button type="button" mat-raised-button class="add-address" (click)="addAddress()">Add Address</button>
+        <button type="submit"mat-raised-button class="submit-form" (click)="onSubmit()">Register User</button>
+    </div>
+
+  </form>
+  
