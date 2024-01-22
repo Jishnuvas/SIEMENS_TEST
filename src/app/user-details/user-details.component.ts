@@ -3,11 +3,12 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ShareDataService } from '../share-data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'siemes-app-user-details',
   standalone: true,
-  imports: [MatTableModule,MatIconModule,MatButtonModule],
+  imports: [MatTableModule,MatIconModule,MatButtonModule,CommonModule],
   templateUrl: './user-details.component.html',
   styleUrl: './user-details.component.scss'
 })
@@ -17,6 +18,7 @@ export class UserDetailsComponent implements OnInit {
     this.shareData.getUserData().subscribe(data=>{
       if(data){
         this.userDetails = data;
+        console.log(data)
       }
     })
   }

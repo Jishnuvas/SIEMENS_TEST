@@ -11,7 +11,13 @@
       </ng-container>
       <ng-container matColumnDef="address">
         <th class="text-center" mat-header-cell *matHeaderCellDef> Address </th>
-        <td class="text-center" mat-cell *matCellDef="let element"> {{element.address}} </td>
+        <td class="text-center" mat-cell *matCellDef="let element"> 
+
+          <li *ngFor="let address of element.addresses;let i = index"> 
+            {{'Address'}}{{i+1}}:{{ address.city + ','+ address.state + ','+ address.pincode}}
+           </li>
+          
+        </td>
       </ng-container>
       <ng-container matColumnDef="action">
         <th class="text-center" mat-header-cell *matHeaderCellDef> Action </th>
